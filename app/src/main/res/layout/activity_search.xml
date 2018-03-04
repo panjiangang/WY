@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <!--搜索的条目-->
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="65px"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="600px"
+            android:layout_height="30dp"
+
+
+            android:layout_marginLeft="30px"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/sel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fancy" />
+
+            <EditText
+                android:id="@+id/ed_sousuo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="羞羞的铁拳"
+                android:padding="2dp"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/te_sousuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10px"
+            android:text="搜索"
+            android:textColor="#000"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!--滚动监听-->
+    <ScrollView
+        android:id="@+id/sel_slv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_top">
+
+        <LinearLayout
+            android:id="@+id/ll_foure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sel_slv"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tv_jianyi"
+                android:layout_width="match_parent"
+                android:layout_height="60px"
+                android:background="#FFCCC8C8"
+                android:padding="15px"
+                android:text="历史记录" />
+
+
+            <my.app.com.sx2_weiying.view.iview.XCFlowLayout
+                android:id="@+id/flowlayout"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/tv_jianyi"></my.app.com.sx2_weiying.view.iview.XCFlowLayout>
+
+            <!--手机的通讯录-->
+            <LinearLayout
+                android:id="@+id/ll_san"
+                android:layout_width="match_parent"
+                android:layout_height="60px"
+                android:layout_below="@id/flowlayout"
+                android:layout_marginTop="15px"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="60px"
+                    android:layout_height="60px"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/collection_select" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="320px"
+                    android:text="看看谁也在搜索  >" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recy2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
